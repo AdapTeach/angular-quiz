@@ -1,0 +1,15 @@
+{
+    "name": "angular-quiz",
+    "description": "AngularJS directives to display JSON quizzes",
+    "version": "0.0.1",
+    "dependencies": {
+        "angular": "1.3.*",
+        "angular-mocks": "1.3.*",
+        "angular-ui-router": "*",
+        "angular-ui-utils": "*",
+        "bootstrap": "*",
+        "angular-bootstrap": "*",
+        "angular-highlightjs": "*"
+    },
+    "devDependencies": {}
+}

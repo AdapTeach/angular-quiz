@@ -1,0 +1,29 @@
+<div class="form-group">
+    <label>True or False ?</label>
+</div>
+<div class="form-group">
+    <h3>{{ assessment.question }}</h3>
+</div>
+<form name="assessmentForm">
+    <div class="form-group">
+        <label ng-class="{ correct: confirmedAndCorrect(true),
+                       wrong: confirmedAndWrong(true)}">
+            <input type="radio"
+                   ng-value="true"
+                   ng-model="selectedAnswer"
+                   ng-disabled="confirmed">
+            True
+        </label>
+    </div>
+    <div class="form-group">
+        <label ng-class="{ correct: confirmedAndCorrect(false),
+                       wrong: confirmedAndWrong(false)}">
+            <input type="radio"
+                   ng-value="false"
+                   ng-model="selectedAnswer"
+                   ng-disabled="confirmed">
+            False
+        </label>
+    </div>
+    <button class="btn btn-primary" ng-click="confirmed = true" ng-hide="confirmed">Confirm</button>
+</form>

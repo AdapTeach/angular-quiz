@@ -1,0 +1,28 @@
+<div ng-if="assessment.question.code" hljs source="assessment.question.code"></div>
+<h3 ng-show="isSimpleQuestion()">{{ getQuestionText() }}</h3>
+<h3 ng-repeat="line in assessment.question.lines">{{ line }}</h3>
+<form name="assessmentForm">
+
+    <!--<div ng-if="getInputType(assessment) == 'checkbox'">-->
+    <!--<input type="checkbox" ng-model="selectedAnswers[$index]">{{ answer.text }}</input>-->
+    <!--</div>-->
+
+    <!--RADIO-->
+    <div ng-repeat="answer in assessment.answers" ng-if="isRadio()">
+
+        <div class="form-group">
+            <label ng-class="{ correct: showAnswerAsCorrect(answer),
+                               wrong: showAnswerAsWrong(answer)}">
+                <input type="radio"
+                       ng-value="answer"
+                       ng-model="assessmentForm.selectedAnswer"
+                       ng-disabled="confirmed">
+                {{ answer.text }}
+            </label>
+        </div>
+
+    </div>
+
+    <!--SUBMIT-->
+    <button class="btn btn-primary" ng-click="confirm()" ng-hide="confirmed">Confirm</button>
+</form>

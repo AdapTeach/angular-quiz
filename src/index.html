@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Angular Quiz Demo</title>
+    <base href="/"/>
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="vendor/highlightjs/styles/github.css"/>
+    <link rel="stylesheet" href="build.css"/>
+    <!-- endbuild -->
+</head>
+<body ng-app="app">
+
+<section ui-view="main" layout="vertical" layout-fill></section>
+
+<!-- build:js scripts/scripts.js -->
+<script src="vendor/angular/angular.js"></script>
+<script src="vendor/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="vendor/angular-highlightjs/angular-highlightjs.js"></script>
+<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="vendor/angular-ui-utils/ui-utils.js"></script>
+<script src="vendor/highlightjs/highlight.pack.js"></script>
+<script src="build.js"></script>
+<script src="buildCoffee.js"></script>
+<script src="templates.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
