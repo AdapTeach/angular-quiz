@@ -15,7 +15,6 @@
         "gulp-livereload": "*",
         "gulp-util": "*",
         "tiny-lr": "*",
-        "gulp-sass": "*",
         "gulp-ng-annotate": "*",
         "gulp-usemin": "*",
         "gulp-minify-css": "*",

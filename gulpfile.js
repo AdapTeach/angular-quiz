@@ -12,7 +12,6 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     usemin = require('gulp-usemin'),
     annotate = require('gulp-ng-annotate'),
-    sass = require('gulp-sass'),
     path = require('path'),
     minifyCss = require('gulp-minify-css'),
     minifyHtml = require('gulp-minify-html'),
@@ -35,11 +34,15 @@ devServer.all('/*', function (req, res) {
 
 // PATHS
 var pathToIndexFile = 'src/index.html';
+var pathToStaticFolder = 'static/*';
 var pathToJsSource = 'src/app/**/*.js';
 var pathToCoffeeSource = 'src/app/**/*.coffee';
 var pathToCssSource = 'src/app/**/*.css';
 var pathToTemplates = 'src/app/**/*.html';
 var pathToLibs = ['src/vendor/**/*.js', 'src/vendor/**/*.css'];
+
+gulp.task('default', ['dev'], function () {
+});
 
 gulp.task('dev', function () {
         runSequence(
@@ -58,6 +61,7 @@ gulp.task('buildDev', [
     'buildCoffee',
     'buildStyle',
     'copyIndex',
+    'copyStaticFolder',
     'cacheTemplates'
 ], function () {
 });
@@ -105,6 +109,13 @@ gulp.task('copyIndex', function () {
         .pipe(refresh(lrserver));
 });
 
+gulp.task('copyStaticFolder', function () {
+    gulp.src(pathToStaticFolder)
+        .pipe(copy('dev'));
+    gulp.src(pathToIndexFile)
+        .pipe(refresh(lrserver));
+});
+
 gulp.task('cacheTemplates', function () {
     gulp.src(pathToTemplates)
         .pipe(templateCache({module: 'app'}))
@@ -122,6 +133,7 @@ gulp.task('watchSource', function () {
     gulp.watch(pathToCoffeeSource, ['buildCoffee']);
     gulp.watch(pathToCssSource, ['buildStyle']);
     gulp.watch(pathToIndexFile, ['copyIndex']);
+    gulp.watch(pathToStaticFolder, ['copyStaticFolder']);
     gulp.watch(pathToTemplates, ['cacheTemplates']);
 });
 
@@ -158,7 +170,8 @@ gulp.task('buildProd', function () {
             html: [minifyHtml({empty: true})],
             js: [annotate(), uglify(), rev()]
         }))
-        .pipe(gulp.dest('prod'))
+        .pipe(gulp.dest('prod'));
+    gulp.src('static/*').pipe(copy('prod'));
 });
 
 gulp.task('startProdServer', function () {

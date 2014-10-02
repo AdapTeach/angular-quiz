@@ -5,31 +5,15 @@ angular.module('quiz', [
   'quiz.yesno'
 ])
 
-.controller('QuizCtrl', ($scope, Items) ->
-  $scope.items = Items
-)
-#
-#.controller('AssessmentFormCtrl', ($scope) ->
-#  $scope.confirm = ->
-#    $scope.confirmed = true
-#    if $scope.assessmentForm.selectedAnswer?.isCorrect?
-#      console.log 'Correct'
-#    else
-#      console.log 'Fail'
-#
-#  $scope.showAnswerAsCorrect = (answer) ->
-#    answer.isCorrect? && $scope.confirmed?
-#
-#  $scope.showAnswerAsWrong = (answer) ->
-#    not answer.isCorrect? && $scope.confirmed?
-#)
-
-.config(($stateProvider) ->
-  $stateProvider.state('quiz', {
-    url: '/quiz'
-    views:
-      main:
-        templateUrl: 'quiz/quiz.html'
-  })
+.factory('Quiz', ->
+  items: []
 )
 
+.controller('QuizCtrl', ($http, $location, Quiz) ->
+  this.Quiz = Quiz
+  urlArray = $location.absUrl().split('quizId=')
+  quizId = urlArray[urlArray.length - 1]
+  $http.get('static/' + quizId + '.json')
+  .success (result) ->
+    Quiz.items = result.items
+)

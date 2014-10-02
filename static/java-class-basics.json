@@ -1,0 +1,100 @@
+{
+    "items": [
+        {
+            "id": "java-basics-object-instance-class",
+            "description": "An object is an instance of a class",
+            "assessments": [
+                {
+                    "type": "MCQ",
+                    "question": "What is a relationship between a class and an object ?",
+                    "answers": [
+                        {
+                            "text": "A class is the instance of an object"
+                        },
+                        {
+                            "text": "An object is the instance of a class",
+                            "isCorrect": true
+                        }
+                    ]
+                },
+                {
+                    "type": "YESNO",
+                    "question": "A class is the instance of an object",
+                    "answer": false
+                },
+                {
+                    "type": "YESNO",
+                    "question": "An object is the instance of a class",
+                    "answer": true
+                }
+            ]
+        },
+        {
+            "id": "java-basics-single-class-many-instances",
+            "description": "For a single class, there can be many instances",
+            "assessments": [
+                {
+                    "type": "MCQ",
+                    "question": "Check the correct statement",
+                    "answers": [
+                        {
+                            "text": "There can be only one object for a single class"
+                        },
+                        {
+                            "text": "There can be many objects for a single class",
+                            "isCorrect": true
+                        }
+                    ]
+                },
+                {
+                    "type": "YESNO",
+                    "question": "There can be only one object for a single class",
+                    "answer": false
+                },
+                {
+                    "type": "YESNO",
+                    "question": "There can be many objects for a single class",
+                    "answer": true
+                }
+            ]
+        },
+        {
+            "id": "java-class-declaration-vs-instantiation",
+            "description": "Difference between class declaration and instantiation",
+            "assessments": [
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Person {}",
+                        "text": "This code is a ..."
+                    },
+                    "answers": [
+                        {
+                            "text": "class declaration",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "class instantiation"
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "new Person();",
+                        "text": "This code is a ..."
+                    },
+                    "answers": [
+                        {
+                            "text": "class declaration"
+                        },
+                        {
+                            "text": "class instantiation",
+                            "isCorrect": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
