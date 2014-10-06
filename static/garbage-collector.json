@@ -1,0 +1,202 @@
+{
+    "items": [
+        {
+            "id": "Know when an object is eligible for garbage collection",
+            "description": "An object is eligible for garbage collection when it is not referenced",
+            "assessments": [
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Person {}\n\nclass Program {\n\n    public static void main(String[] args) {\n        new Person();\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "No"
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Person {}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p = new Person();\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes"
+                        },
+                        {
+                            "text": "No",
+                            "isCorrect": true
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p = new Person();\n        Address address = new Address();\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes"
+                        },
+                        {
+                            "text": "No",
+                            "isCorrect": true
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p = new Person();\n        new Address();\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "No"
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p = new Person();\n        p.address = new Address();\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes"
+                        },
+                        {
+                            "text": "No",
+                            "isCorrect": true
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p = new Person();\n        Address address = new Address();\n        address = null;\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "No"
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p = new Person();\n        p.address = new Address();\n        p = null;\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "No"
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p = new Person();\n        p.address = new Address();\n        p.address = null;\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "No"
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p = new Person();\n        Address address = new Address();\n        p.address = address;\n        address = null;\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes"
+                        },
+                        {
+                            "text": "No",
+                            "isCorrect": true
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p = new Person();\n        Address address = new Address();\n        p.address = address;\n        p = null;\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "No"
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p1 = new Person();\n        Person p2 = p1;\n        p1 = null;\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes"
+                        },
+                        {
+                            "text": "No",
+                            "isCorrect": true
+                        }
+                    ]
+                },
+                {
+                    "type": "MCQ",
+                    "question": {
+                        "code": "class Address {}\n\nclass Person {\n    Address address;\n}\n\nclass Program {\n\n    public static void main(String[] args) {\n        Person p1 = new Person();\n        Person p2 = new Person();\n        p1 = null;\n    }\n\n}",
+                        "text": "Is an object eligible for garbage collection ?"
+                    },
+                    "answers": [
+                        {
+                            "text": "Yes",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "No"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
