@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
     runSequence = require('run-sequence'),
-    rimraf = require('rimraf'),
+    del = require('del'),
     refresh = require('gulp-livereload'),
     lrserver = require('tiny-lr')(),
     express = require('express'),
@@ -67,7 +67,7 @@ gulp.task('buildDev', [
 });
 
 gulp.task('cleanDevFolder', function (cb) {
-    rimraf('dev', cb);
+    del('dev', cb);
 });
 
 gulp.task('copyLibs', function () {
@@ -160,7 +160,7 @@ gulp.task('prod', function () {
 );
 
 gulp.task('cleanProdFolder', function (cb) {
-    rimraf('prod', cb);
+    del('prod', cb);
 });
 
 gulp.task('buildProd', function () {
